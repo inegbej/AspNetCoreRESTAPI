@@ -322,11 +322,11 @@ __pycache__/
 *.odx.cs
 *.xsd.cs
 
-# OpenCover UI analysis results
-OpenCover/
-
 # Azure Stream Analytics local run output
 ASALocalRun/
+
+# OpenCover UI analysis results
+OpenCover/
 
 # MSBuild Binary and Structured Log
 *.binlog

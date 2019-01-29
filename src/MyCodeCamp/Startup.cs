@@ -76,17 +76,7 @@ namespace MyCodeCamp
                     }
                 };
             });
-
-
-            // 
-            //services.AddApiVersioning(cfg => 
-            //{
-            //    cfg.DefaultApiVersion = new ApiVersion(1, 1);
-            //    cfg.AssumeDefaultVersionWhenUnspecified = true;
-            //    cfg.ReportApiVersions = true;
-            //});
-
-
+            
             // add CORS to the services collection. CORS Policies
             services.AddCors(cfg =>
             {
@@ -97,7 +87,7 @@ namespace MyCodeCamp
                     .AllowAnyMethod()
                     .WithOrigins("http://wildermuth.com");
                 });
-                // allow anyone to read our api but will not be ble to perform Put, Post, Delete
+                // allow anyone to read our api but will not be able to perform Put, Post, Delete
                 cfg.AddPolicy("AnyGET", bldr =>
                 {
                     bldr.AllowAnyHeader()
@@ -137,17 +127,7 @@ namespace MyCodeCamp
         {
             loggerFactory.AddConsole(_config.GetSection("Logging"));
             loggerFactory.AddDebug();
-
-            //app.UseCors(cfg => 
-            //{  // This will allow anyone to access your api
-            //    cfg.AllowAnyHeader()
-            //       .AllowAnyMethod()
-            //       .AllowAnyOrigin();
-            //     //.WithOrigins("http://wildermuth.com"); will only allow this url
-            //});
-
-
-            
+                                    
             app.UseIdentity();    // here we are using the Identity service. note: this must be before UseMvc
 
             // use the middleware for security tokens            
